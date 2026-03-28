@@ -1,10 +1,10 @@
 Público Objetivo
 
 *Rango etario: 15 a 60 años.
-*Nacionalidad: Argentina.
-*Ubicación geográfica: Entorno urbano principalmente, enfcado inicialmente en estudiantes de Fontana, provincia del Chaco, y la región circundante. A ser posible siempre se busca llegar a ser internacional, pero me enfoque en un punto de partida.
-*Variables adiicionales: Estudiantes de escuelas técnicas (como la E.E.T N°24) y programadores junior. Tienen un nivel de alfabetización digital alto, acceden al contenido principalmente desde computadoras de escritorio en laboratorios de informática y desde teléfonos móviles. Buscan información directa, sin distracciones y valoran el rendimiento rápido de las páginas web ( en resumen nenes adictos al tikitoko).
-*Extra: El plan a futuro seria crear una pagina bastante mas profesional y seria ( por eso estoy definiendo todo esto lo mas groso posible). aunque no quiero perder la originalidad y marca personal de los mapaches y la poca "seriedad" a la hora de trabajar.
+* Nacionalidad: Argentina.
+* Ubicación geográfica: Entorno urbano principalmente, enfcado inicialmente en estudiantes de Fontana, provincia del Chaco, y la región circundante. A ser posible siempre se busca llegar a ser internacional, pero me enfoque en un punto de partida.
+* Variables adiicionales: Estudiantes de escuelas técnicas (como la E.E.T N°24) y programadores junior. Tienen un nivel de alfabetización digital alto, acceden al contenido principalmente desde computadoras de escritorio en laboratorios de informática y desde teléfonos móviles. Buscan información directa, sin distracciones y valoran el rendimiento rápido de las páginas web ( en resumen nenes adictos al tikitoko).
+* Extra: El plan a futuro seria crear una pagina bastante mas profesional y seria ( por eso estoy definiendo todo esto lo mas groso posible). aunque no quiero perder la originalidad y marca personal de los mapaches y la poca "seriedad" a la hora de trabajar.
 ---
 
 Design Inspirations and Creative Process
