@@ -19,8 +19,24 @@ Creative Process Documentation:
 * Color Palette: I cchose a dark gray background (`#5d5d5d`) to resemble my page to the colors of a raccoon and thus contrast with the photo. During the iterative design process (following UCD principles), I focused on ensuring the text had enough contrast to the dark background to meet WCAG accessibility standards.
 * Layout: I used CSS Flexbox to center all the content perfectly on the screen. It is the most efficient way to ensure the design adapts well to different screen sizes.
 * Images: I added a circular crop to the profile picture with a solid white border to match the standard UI conventions of platforms like GitHub and LinkedIn, making it instantly recognizable for the user yeii.
-(TODO ESTO LO HICE EN UN BLOCK DE NOTAS QUE DESPUES COPIE ACA :D)
 
+Portfolio Contact Automation - n8n Workflow
+
+1. Overview
+This workflow automates the reception and management of messages sent through the contact form on my personal web portfolio. It acts as an Intelligent Process Automation (IPA) tool, classifying incoming messages and storing data efficiently.
+
+2. Trigger and Workflow Logic
+* Trigger: The flow starts with a Webhook node. When a user submits the HTML contact form on my website, a POST request is sent to this webhook containing their name, email, and message.
+* Logic (Processing): I implemented an IF node to analyze the content of the message. It checks if the string contains the word "proyecto" (project). This basic conditional logic helps prioritize potential freelance job offers.
+* Integrations (Services):
+  1. Telegram API: If the message contains the keyword "proyecto", the True branch triggers a Telegram bot to send an immediate push notification to my phone, alerting me of a high-priority contact.
+  2. Google Sheets: Regardless of the IF node outcome, both branches eventually connect to a Google Sheets node. This appends a new row to a spreadsheet, creating a historical database of all my contacts and inquiries without any manual data entry.
+
+3. Why it is useful
+As a Junior Developer, managing potential client interactions professionally is crucial. This automation saves time, ensures I never lose a contact's email (safely stored in the Cloud via Google Sheets), and provides real-time alerts for important opportunities.
+
+4. Implementation Challenges
+The main challenge was understanding how to properly map the JSON payload coming from the Webhook into the specific fields required by the Google Sheets node. Learning to use n8n's expression syntax (`{{$json.body.name}}`) was so hard.
 
 ![kinger-the-amazing-digital-circus](https://github.com/user-attachments/assets/9a97ff9b-de6f-4e11-8df6-0a6bd9f5fefa)
 
