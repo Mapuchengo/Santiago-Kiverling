@@ -1,0 +1,164 @@
+{
+  "name": "Automatización Formulario de Contacto",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.body.mensaje }}",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              },
+              "rightValue": "proyecto",
+              "id": "4981bbb3-54dd-43a7-b320-fb012f929de3"
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "6af8a9df-98a9-4457-92dd-675cad103213",
+      "name": "Es un proyecto?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        432,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "8403042313",
+        "text": "=¡Nuevo prospecto de cliente!\nNombre: {{ $json.body.nombre }}\nEmail: {{ $json.body.email }}\nMensaje: {{ $json.body.mensaje }}",
+        "additionalFields": {}
+      },
+      "id": "3c7f8c10-54bc-47b3-a871-c0b4e54f014a",
+      "name": "Aviso Urgente Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        656,
+        160
+      ],
+      "webhookId": "5da61807-cd36-4b07-bd19-637f40aae273",
+      "credentials": {
+        "telegramApi": {
+          "id": "BEhIRSAD1b9YPdkf",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1CxaPsQtKWJYIQnwwVoSYoLKUfrsowvqSmuC1nd0aSR8",
+          "mode": "list",
+          "cachedResultName": "Usuarios",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CxaPsQtKWJYIQnwwVoSYoLKUfrsowvqSmuC1nd0aSR8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CxaPsQtKWJYIQnwwVoSYoLKUfrsowvqSmuC1nd0aSR8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "id": "3ae7a5b2-4cde-48c9-af63-15b3e077dc25",
+      "name": "Guardar en Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        880,
+        240
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "1JerXwP1uXNVNAsV",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "contacto-portfolio",
+        "options": {}
+      },
+      "id": "38a0a26b-447b-4145-9c30-8ee24973eda7",
+      "name": "Recibir Formulario (Webhook)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        208,
+        240
+      ],
+      "webhookId": "53c9e717-9318-484b-a4a3-df135bfdc0db"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Es un proyecto?": {
+      "main": [
+        [
+          {
+            "node": "Aviso Urgente Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Guardar en Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aviso Urgente Telegram": {
+      "main": [
+        [
+          {
+            "node": "Guardar en Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recibir Formulario (Webhook)": {
+      "main": [
+        [
+          {
+            "node": "Es un proyecto?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "46dcd25d-2996-4ef2-bac4-928ab7ea3d94",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8ff30acd1752974656c6e1f16f221ad5a439fc49a829a70411da7a1dca1b9b91"
+  },
+  "id": "wycMDDyzBd31rwxz",
+  "tags": []
+}
