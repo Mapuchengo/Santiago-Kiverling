@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tarea de gitHub</title>
+    <title>Santiago Kiverling - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
-
 <body>
     
-    <main class="contenedor-central">
+    <div class="contenedor-principal">
+        <header class="perfil-header">
+            <img src="perfil.jpeg" alt="Foto de perfil" class="foto-perfil">
+            <h1>Santiago Kiverling</h1>
+            <h2 class="usuario">@Mapuchengo</h2>
+            <p class="tagline">Técnico en Programación (TEP) en formación</p>
+        </header>
 
-        <img src="perfil.jpeg" alt="foto mapache" class="foto-perfil">
-        
-        <h1>Santiago Kiverling (@Mapuchengo)</h1>
-        
-        <p>Estudiante Técnico en Programación (TEP)</p>
-        <p>Formandose actualmente en la E.E.T N°24 Simon de Iriondo</p>
+        <main>
+            <section class="tarjeta info-personal">
+                <h3>Sobre Mí</h3>
+                <p>Estudiante de la E.E.T N°24 "Simón de Iriondo". Desarrollador Frontend enfocado en crear interfaces poco serias y humoristicas, tratando de no perder el profesionalismo en el intento. Desde Chaco para el mundo, siempre buscando impartir la adoracion por los mapaches y aprender nuevas tecnologías.</p>
+            </section>
 
-    </main>
+            <section class="tarjeta habilidades">
+                <h3>Stack Tecnológico</h3>
+                <ul class="lista-skills">
+                    <li>Manejo de Base de datos enlazadas a paginas (Mysql, Access/PhP)</li>
+                    <li>Manejo de lenguajes (Phyton, C++, Javascript, HTML5 & CSS3, SQL)</li>
+                    <li>Diseño Responsivo (UI/UX)</li>
+                    <li>Control de Versiones (Git/GitHub)</li>
+                    <li>Automatización (n8n)</li>
+                </ul>
+            </section>
+
+            <section class="tarjeta contacto">
+                <h3>Contacto</h3>
+                <p>¿Tienes un proyecto en mente que incluya mapaches? Escríbeme.</p>
+                    <form class="formulario-contacto" action="https://mapuchengo.app.n8n.cloud/webhook/contacto-portfolio" method="POST">
+                    <input type="text" name="nombre" placeholder="Tu Nombre" required>
+                    <input type="email" name="email" placeholder="Tu Correo" required>
+                    <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2026 Santiago Kiverling.</p>
+        </footer>
+    </div>
 
 </body>
-
 </html>
